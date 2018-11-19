@@ -14,11 +14,17 @@ FormatTextSyntax="$TextReset $TextBlue $TextBold" # Command Syntax & other text
 FormatRunCommand="echo -e $TextReset"
 
 echo -e $FormatTextSyntax "
-  Installing Cockpit via # yum install cockpit
+  Installing Cockpit via :
+
+  # yum install cockpit
 
 "
 $FormatRunCommand
 yum install -y cockpit
+useradd cockpituser
+# This is obviously a terrible security practice, never do this in real life!
+echo "cockpit" | passwd --stdin cockpituser
+
 echo -e $FormatTextSyntax "
   Enable service and firewall
 
