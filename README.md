@@ -22,4 +22,5 @@ Cockpit is a user-friendly web-based interface for administering servers. It all
 
 ### References
 [Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/getting_started_with_cockpit/)
+
 [Red Hat Blog Post](https://www.redhat.com/en/blog/linux-system-administration-management-console-cockpit?utm_medium=Email&utm_campaign=weekly&sc_cid=701f2000000tpY4AAI)

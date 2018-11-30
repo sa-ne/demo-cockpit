@@ -24,10 +24,15 @@ yum install -y cockpit
 useradd cockpituser
 # This is obviously a terrible security practice, never do this in real life!
 echo "cockpit" | passwd --stdin cockpituser
+usermod -a -G wheel cockpituser
 
 echo -e $FormatTextSyntax "
   Enable service and firewall
 
+  # systemctl enable cockpit.socket
+  # firewall-cmd --permanent --add-service cockpit
+  # firewall-cmd --reload
+  3 systemctl start cockpit
 "
 $FormatRunCommand
 systemctl enable cockpit.socket

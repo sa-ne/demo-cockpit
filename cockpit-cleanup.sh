@@ -10,6 +10,7 @@ yum remove -y "cockpit*"
 echo -e "Cleaning up ..."
 firewall-cmd --remove-service=cockpit
 firewall-cmd --reload
+# This command will throw an error if cockpit packages were succussfully removed.  Error = ok
 systemctl disable cockpit.socket
 subscription-manager repos --disable=rhel-7-server-extras-rpms
 rm -rf /usr/share/cockpit
