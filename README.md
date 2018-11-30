@@ -6,7 +6,6 @@ Cockpit is a user-friendly web-based interface for administering servers. It all
 
 ### Notes
 * RHEL 7 only, no RHEL 6 or below
-* Package: subscription-manager-cockpit = slightly nicer format
 * Cockpit does not need special infrastructure or configuration. Once installed, it is ready to use
 * When not in use, Cockpit uses no memory or CPU on the server
 * Cockpit stores no data or policy. People keep their system-wide permissions and use the system credentials

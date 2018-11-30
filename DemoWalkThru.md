@@ -20,7 +20,7 @@
     * Note ability to create team, bond, etc
   * Accounts -- Local accounts with the ability to add accounts.
     * Note: have not tested with IdM or sssd enabled system with external auth source
-  * Services -- Really more of a full view of systemd with targets, sockets, etc
+  * Services -- Not just services, really more of a full view of systemd with targets, sockets, etc
     * Click on service = ability to start/stop & enable/disable
   * Diagnostic Reports
     * Click on Create Report
@@ -28,7 +28,7 @@
     ```
     # yum install -y sos
     ```
-    * Refresh page, Click Create Report, takes about 1 min, click Download
+    * Refresh page, Click Create Report (takes about 1m), click Download
   * Kernel Dump -- Shows kdump status and configuration and allows to crash the kernel to test kdump
     * If page shows  "Service has an error" clicking will take you to systemd log entry.  Also hover over "Info" button for potential fix.
   * SELinux -- Shows whether SELinux is enabled and lists access control errors.
@@ -70,7 +70,9 @@
 
 * Other
   * Dashboard -- Add multiple servers to monitor
-  * Extra Credit: add a second VM to view consolidated statistics as well as ability to utilize above tabs on 2nd server from 1st server cockpit interface (e.g. jump server/bastion host)
+  * Extra Credit: add a second VM to view consolidated statistics as well as ability to utilize above tabs on 2nd server from 1st server cockpit interface
+    * Second server must have cockpit packages installed and accessible via SSH from first server
+    * Use Case: Jump server/bastion host
 
 * Non-Root User Access
   * Login as cockpituser (password = cockpit)
