@@ -12,14 +12,13 @@ Cockpit is a user-friendly web-based interface for administering servers. It all
 
 ### Installation & Config
 ```
-# yum install -y cockpit 		(also installs -bridge, -system, -ws)
-# systemctl enable cockpit.socket
-# firewall-cmd --permanent --add-service cockpit
-# firewall-cmd --reload
-# systemctl start cockpit
+      # yum install -y cockpit 		(also installs -bridge, -system, -ws)
+      # systemctl enable cockpit.socket
+      # firewall-cmd --permanent --add-service cockpit
+      # firewall-cmd --reload
+      # systemctl start cockpit
 ```
 
-### References
-[Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/getting_started_with_cockpit/)
-
-[Red Hat Blog Post](https://www.redhat.com/en/blog/linux-system-administration-management-console-cockpit?utm_medium=Email&utm_campaign=weekly&sc_cid=701f2000000tpY4AAI)
+### References and Resources
+* [Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/getting_started_with_cockpit/)
+* [Red Hat Blog Post](https://www.redhat.com/en/blog/linux-system-administration-management-console-cockpit?utm_medium=Email&utm_campaign=weekly&sc_cid=701f2000000tpY4AAI)
