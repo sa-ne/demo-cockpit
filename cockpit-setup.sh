@@ -14,7 +14,8 @@ FormatTextSyntax="$TextReset $TextBlue $TextBold" # Command Syntax & other text
 FormatRunCommand="echo -e $TextReset"
 
 echo -e $FormatTextSyntax "
-  Installing Cockpit via :
+  Installing Cockpit via:
+  Note: For RHEL 8, cockpit package is installed by default.
 
   # yum install cockpit
 
@@ -30,13 +31,13 @@ echo -e $FormatTextSyntax "
   Enable service and firewall
 
   # systemctl enable cockpit.socket
-  # firewall-cmd --permanent --add-service cockpit
+  # firewall-cmd --permanent --add-service=cockpit
   # firewall-cmd --reload
-  3 systemctl start cockpit
+  # systemctl start cockpit
 "
 $FormatRunCommand
 systemctl enable cockpit.socket
-firewall-cmd --permanent --add-service cockpit
+firewall-cmd --permanent --add-service=cockpit
 firewall-cmd --reload
 systemctl start cockpit
 
