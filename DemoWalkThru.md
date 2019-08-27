@@ -1,7 +1,7 @@
 ## Cockpit Demo WalkThru
 
 ### Requirements
-* Minimum VM: 1vCPU x 1G mem, running RHEL 7.latest
+* Minimum VM: 1vCPU x 1G mem, running RHEL 7.latest or RHEL 8.latest
 * Setup will create local user for demo
 
 ### WalkThru:
@@ -26,7 +26,7 @@
     * Click on Create Report
     * Fails if sos package is not installed
     ```
-    # yum install -y sos
+          # yum install -y sos
     ```
     * Refresh page, Click Create Report (takes about 1m), click Download
   * Kernel Dump -- Shows kdump status and configuration and allows to crash the kernel to test kdump
@@ -34,31 +34,34 @@
   * SELinux -- Shows whether SELinux is enabled and lists access control errors.
     * There will be no details if package not installed
     ```
-    # yum install -y setroubleshoot-server
+          # yum install -y setroubleshoot-server
     ```
     * Refresh page, should now see "SELinux Access Control Errors"
-    * Extra Credit: generate a SELinux event and then refresh page
+    * Extra Credit: generate a SELinux event, run the command below, and then refresh page
     ```
-    # work-in-progress need-to-figure-this-out
+          # cockpit-selinux.sh
     ```
   * Subscriptions -- Displays installed Red Hat products and subscriptions, plus status
   * Terminal -- Opens an in-browser terminal with a command line session.  Useful if SSH is not allowed.
 
 * Install Plug-Ins
+  * RHEL 7 Installation:
 ```
-# yum install -y cockpit* --enablerepo=rhel-7-server-extras-rpms
+      # yum install -y cockpit* --enablerepo=rhel-7-server-extras-rpms
+```
+  * RHEL 8 Installation:
+```
+    # yum install -y cockpit-pcp cockpit-dashboard cockpit-session-recording
 ```
 * Logout/Log back in
 * Notice new or changed tabs
   * System
     * Add ability to Store Performance Data (may have to refresh)
   * Logs -- no change
-  * Storage (new)
+  * Storage (New for RHEL 7)
     * Note: Read/Write stats, Filesystems, NFS, Drives, Recent log entries
     * LVM (click VG), partitioning (click drive)
   * Networking -- no change
-  * Containers (new) -- Only if docker installed and running.  Available via cockpit-docker package
-  * Virtual Machines (new) -- Only if KVM/libvirt installed and running.  Available via cockpit-machines package
   * Accounts -- no change
   * Services -- no change
   * Diagnostic Reports -- no change

@@ -16,3 +16,7 @@ subscription-manager repos --disable=rhel-7-server-extras-rpms
 rm -rf /usr/share/cockpit
 rm -rf /etc/cockpit
 userdel -rf cockpituser
+# If cockpit-selinux.sh was used to create SELinux event, additional cleanup.
+yum erase -y httpd httpd-tools
+firewall-cmd --remove-service=http --permanent
+firewall-cmd --reload
